@@ -5,8 +5,13 @@ gem 'rails', '3.1.0'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3', '1.3.4'
+gem 'sqlite3', '1.3.4', :group => :development
 
+group :production do
+  # gems specifically for Heroku go here
+  gem "pg"
+  gem 'therubyracer', '~> 0.9.3.beta1'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
